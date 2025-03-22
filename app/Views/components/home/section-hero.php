@@ -1,13 +1,15 @@
-<!-- ==== container box === -->
- <div class="container-fluid">
-    <!-- === component right === -->
-     <div class="d-flex align-items-center justify-content-center min-vh-100 text-center">
-        <!-- === component text judul === -->
-        <div class="content-text">
-            <h1 class="text-uppercase montserrat-bold fs-10">apotek kemenkes</h1>
-            <h6>to support health quickly, easily and with care.
-        Healthy steps start here</h6>
+<section class="container d-flex align-items-center min-vh-100">
+    <div class="row w-100">
+        <!-- Teks Hero -->
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <h1 class="display-4 fw-bold">Selamat Datang di Kemenkes App</h1>
+            <p class="lead">Jelajahi layanan kami yang luar biasa dan temukan solusi terbaik untuk Anda.</p>
+            <a href="#" class="btn btn-primary btn-lg mt-3">Masuk Pada Aplikasi</a>
         </div>
-       
-     </div>
- </div>
+
+        <!-- Gambar Hero -->
+        <div class="col-lg-6 d-flex justify-content-center">
+            <img src="/components/image/illustrasi_gambar-1.jpg" class="img-fluid" alt="Hero Image">
+        </div>
+    </div>
+</section>

@@ -1,0 +1,68 @@
+CRITICAL - 2025-03-22 14:53:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "./components/card-login.php"
+[Method: GET, Route: login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('./components/card-login.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('./components/card-login', [], true)
+ 3 APPPATH\Views\auth\pages\login.php(14): view('./components/card-login')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\auth\\pages\\login.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('auth/pages/login', [], true)
+ 7 APPPATH\Controllers\Auth\Login.php(11): view('auth/pages/login')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\Login->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-22 14:53:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/components/card-login.php"
+[Method: GET, Route: login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/components/card-login.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/components/card-login', [], true)
+ 3 APPPATH\Views\auth\pages\login.php(14): view('/components/card-login')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\auth\\pages\\login.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('auth/pages/login', [], true)
+ 7 APPPATH\Controllers\Auth\Login.php(11): view('auth/pages/login')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\Login->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-22 14:53:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "../components/card-login.php"
+[Method: GET, Route: login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('../components/card-login.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('../components/card-login', [], true)
+ 3 APPPATH\Views\auth\pages\login.php(14): view('../components/card-login')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\auth\\pages\\login.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('auth/pages/login', [], true)
+ 7 APPPATH\Controllers\Auth\Login.php(11): view('auth/pages/login')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\Login->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-22 14:54:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "components/card-login.php"
+[Method: GET, Route: login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('components/card-login.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/card-login', [], true)
+ 3 APPPATH\Views\auth\pages\login.php(14): view('components/card-login')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\auth\\pages\\login.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('auth/pages/login', [], true)
+ 7 APPPATH\Controllers\Auth\Login.php(11): view('auth/pages/login')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\Login->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
