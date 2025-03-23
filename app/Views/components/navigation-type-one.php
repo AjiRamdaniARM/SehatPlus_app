@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarPillsExample">
       <ul class="navbar-nav navbar-nav-pills">
         <li class="nav-item">
-          <a class="nav-link" href="#">Beranda</a>
+          <a class="nav-link" href="<?= base_url('/'); ?>">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('login'); ?>">Masuk</a>
+          <a class="nav-link" href="<?= base_url('aksesLogin'); ?>">Masuk</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Informasi</a>

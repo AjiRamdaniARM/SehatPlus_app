@@ -3,6 +3,7 @@
 namespace Config;
 
 use CodeIgniter\Config\BaseService;
+use Illuminate\Support\Facades\Blade;
 
 /**
  * Services Configuration file.
@@ -29,4 +30,12 @@ class Services extends BaseService
      *     return new \CodeIgniter\Example();
      * }
      */
+    public static function blade($getShared = true)
+    {
+        if ($getShared) {
+            return static::getSharedInstance('blade');
+        }
+
+        return new Blade(APPPATH . 'Views', WRITEPATH . 'cache');
+    }
 }
