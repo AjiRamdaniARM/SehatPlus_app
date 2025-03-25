@@ -2,7 +2,8 @@
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <div class="card my-5">
-          <form class="card-body cardbody-color p-lg-5">
+          <form action="<?= base_url('prosses') ?>" class="card-body cardbody-color p-lg-5">
+          <?= csrf_field() ?>
                <!-- === component breadcumb == -->
           <nav aria-label="breadcrumb container">
               <ol class="breadcrumb">
@@ -17,11 +18,11 @@
             </div>
 
             <div class="mb-3">
-              <input type="text" class="form-control" name="username" id="Username" aria-describedby="emailHelp"
-                placeholder="User Name">
+              <input type="text" class="form-control" name="nama" id="nama" aria-describedby="emailHelp"
+                placeholder="Nama Anda">
             </div>
             <div class="mb-3">
-              <input type="password" name="password" class="form-control" id="password" placeholder="password">
+              <input type="password" name="kata_sandi" class="form-control" id="kata_sandi" placeholder="Kata Sandi Anda">
             </div>
             <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Masuk</button></div>
             <div id="emailHelp" class="form-text text-center mb-5 text-dark">Lupa

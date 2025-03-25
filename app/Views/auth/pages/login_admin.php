@@ -12,6 +12,5 @@
     <!-- === end component navigation ==== -->
     <!-- === component card login === -->
     <?= view('auth/components/card-login-admin') ?>
-
 </body>
 </html>

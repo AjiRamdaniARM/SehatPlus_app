@@ -22,7 +22,6 @@ class Login extends BaseController
         return view('auth/pages/login_owner'); 
     }
 
-    
 
     // === controller page hak akses login === //
     public function indexAkses() {
