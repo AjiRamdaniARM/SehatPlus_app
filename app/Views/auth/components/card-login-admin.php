@@ -3,8 +3,16 @@
       <div class="col-md-6 offset-md-3">
         <div class="card my-5">
           <form class="card-body cardbody-color p-lg-5">
+               <!-- === component breadcumb == -->
+          <nav aria-label="breadcrumb container">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="<?= base_url('/') ?>">Beranda</a></li>
+                  <li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('aksesLogin') ?>">Masuk</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Admin</li>
+              </ol>
+          </nav>
             <div class="text-center">
-              <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+              <img src="https://i.pinimg.com/736x/13/44/88/1344881a0b7b7b4a766621adbaafa811.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                 width="200px" alt="profile">
             </div>
 

@@ -6,12 +6,27 @@ use App\Controllers\BaseController; // Pastikan untuk mengimpor BaseController
 
 class Login extends BaseController
 {
+
+    // === controller page login admin === //
     public function index()
     {
-        return view('auth/pages/login'); // Sesuaikan dengan lokasi view
+        return view('auth/pages/login_admin'); 
     }
 
-    public function indexAkses() {
-        return view('auth/pages/akses'); // Sesuaikan dengan lokasi view
+    // === controller page login kasir === //
+    public function loginKasir() {
+        return view('auth/pages/login_kasir'); 
     }
+
+    public function loginOwner() {
+        return view('auth/pages/login_owner'); 
+    }
+
+    
+
+    // === controller page hak akses login === //
+    public function indexAkses() {
+        return view('auth/pages/akses'); 
+    }
+
 }

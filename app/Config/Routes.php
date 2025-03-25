@@ -9,7 +9,10 @@ $routes->get('/', 'Home::index');
 
 // === route login === //
 $routes->get('aksesLogin', 'Auth\Login::indexAkses');
-$routes->get('login', 'Auth\Login::index');
+$routes->get('login/admin', 'Auth\Login::index'); // akses login admin
+$routes->get('login/kasir', 'Auth\Login::loginKasir'); // akses login admin
+$routes->get('login/owner', 'Auth\Login::loginOwner'); // akses login admin
+
 
 // === route admin === //
 $routes->get('dashboard', 'Admin\Admin::index');
