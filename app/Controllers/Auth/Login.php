@@ -18,6 +18,7 @@ class Login extends BaseController
         return view('auth/pages/login_kasir'); 
     }
 
+    // === controller page login owner === //
     public function loginOwner() {
         return view('auth/pages/login_owner'); 
     }
@@ -26,6 +27,12 @@ class Login extends BaseController
     // === controller page hak akses login === //
     public function indexAkses() {
         return view('auth/pages/akses'); 
+    }
+
+    
+    // === controller page hak akses login === //
+    public function passwordHash() {
+        return view('auth/pages/passwordHash'); 
     }
 
 }

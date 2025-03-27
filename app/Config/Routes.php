@@ -19,3 +19,7 @@ $routes->post('AuthProses', 'Auth\AuthController::MasukAdmin');
 
 // === route admin === //
 $routes->get('dashboard', 'Admin\Admin::index');
+
+
+// === route password hash === //
+$routes->get('passwordHash', 'Auth\Login::passwordHash');

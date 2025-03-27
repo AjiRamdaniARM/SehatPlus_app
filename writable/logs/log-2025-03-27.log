@@ -84,3 +84,48 @@ in APPPATH\Controllers\Auth\AuthController.php on line 22.
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-27 22:27:48 --> ErrorException: Undefined property: CodeIgniter\View\View::$request
+[Method: GET, Route: password_hash]
+in APPPATH\Views\auth\pages\passwordHash.php on line 16.
+ 1 APPPATH\Views\auth\pages\passwordHash.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$request', 'C:\\laragon\\www\\apotek_app\\app\\Views\\auth\\pages\\passwordHash.php', 16)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\auth\\pages\\passwordHash.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('auth/pages/passwordHash', [], true)
+ 5 APPPATH\Controllers\Auth\Login.php(35): view('auth/pages/passwordHash')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\Login->password_hash()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-27 22:28:36 --> ErrorException: Undefined property: CodeIgniter\View\View::$request
+[Method: GET, Route: password_hash]
+in APPPATH\Views\auth\pages\passwordHash.php on line 16.
+ 1 APPPATH\Views\auth\pages\passwordHash.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$request', 'C:\\laragon\\www\\apotek_app\\app\\Views\\auth\\pages\\passwordHash.php', 16)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\auth\\pages\\passwordHash.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('auth/pages/passwordHash', [], true)
+ 5 APPPATH\Controllers\Auth\Login.php(35): view('auth/pages/passwordHash')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\Login->password_hash()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-27 22:54:56 --> ErrorException: Undefined property: CodeIgniter\View\View::$request
+[Method: GET, Route: passwordHash]
+in APPPATH\Views\auth\pages\passwordHash.php on line 16.
+ 1 APPPATH\Views\auth\pages\passwordHash.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$request', 'C:\\laragon\\www\\apotek_app\\app\\Views\\auth\\pages\\passwordHash.php', 16)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\auth\\pages\\passwordHash.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('auth/pages/passwordHash', [], true)
+ 5 APPPATH\Controllers\Auth\Login.php(35): view('auth/pages/passwordHash')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\Login->passwordHash()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')

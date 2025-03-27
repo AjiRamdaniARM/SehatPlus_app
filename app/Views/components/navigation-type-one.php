@@ -10,7 +10,12 @@
           <a class="nav-link" href="<?= base_url('/'); ?>">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('aksesLogin'); ?>">Masuk</a>
+          <?php $session = session(); ?>
+          <?php if($session->get('nama')): ?>
+            <a class="nav-link" href="<?= base_url('dashboard') ?>"> <?= $_SESSION['akses']; ?></a>
+          <?php else: ?>
+            <a class="nav-link" href="<?= base_url('aksesLogin'); ?>">Masuk</a>
+          <?php endif; ?>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Informasi</a>
