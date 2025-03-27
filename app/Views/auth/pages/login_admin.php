@@ -10,6 +10,14 @@
     <!-- === component navigation === -->
     <?= view('components/navigation-type-one') ?>
     <!-- === end component navigation ==== -->
+    <!-- === component alert === -->
+    <div class="box text-center">
+        <?php if (session()->getFlashdata('msg')): ?>
+            <div class="alert alert-danger">
+                <?= session()->getFlashdata('msg'); ?>
+            </div>
+        <?php endif; ?>
+    </div>
     <!-- === component card login === -->
     <?= view('auth/components/card-login-admin') ?>
 </body>

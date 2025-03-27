@@ -8,31 +8,45 @@ use App\Models\PenggunaModel;
 class AuthController extends BaseController
 {
     public function MasukAdmin()
-{
-    $session = session();
-    $penggunaModel = new PenggunaModel();
-
-    $nama = $this->request->getPost('nama');
-    $kata_sandi = $this->request->getPost('kata_sandi');
-
-    $pengguna = $penggunaModel->where('nama', $nama)->first();
-
-    if ($pengguna) {
-        if (password_verify($kata_sandi, $pengguna['kata_sandi'])) {
-            // Simpan data pengguna ke session
-            $session->set([
-                'id'    => $pengguna['id_pengguna'],
-                'nama'  => $pengguna['nama'],
-                'role'  => $pengguna['akses'],
-                'logged_in' => true
-            ]);
-
-            return redirect()->to('dashboard'); // Arahkan ke dashboard
+    {
+        $session = session();
+        $penggunaModel = new PenggunaModel();
+        
+        // Ambil input dari form
+        $nama = $this->request->getPost('nama');
+        $kata_sandi = $this->request->getPost('kata_sandi');
+    
+        // Ambil data pengguna berdasarkan nama
+        $data = $penggunaModel->where('nama', $nama)->first();
+    
+        if ($data) {
+            // Periksa apakah kata sandi sudah di-hash
+            if (password_verify($kata_sandi, $data['kata_sandi'])) {
+                $ses_data = [
+                    'id_pengguna' => $data['id_pengguna'],
+                    'nama' => $data['nama'],
+                    'akses' => $data['akses'],
+                    'logged_in' => TRUE
+                ];
+                $session->set($ses_data);
+    
+                // Debugging: Periksa apakah session benar-benar tersimpan
+                if ($session->has('logged_in')) {
+                    return redirect()->to(base_url('dashboard'));
+                } else {
+                    $session->setFlashdata('msg', 'Session tidak tersimpan.');
+                    return redirect()->to(base_url('login/admin'));
+                }
+            } else {
+                $session->setFlashdata('msg', 'Password salah.');
+                return redirect()->to(base_url('login/admin'));
+            }
         } else {
-            return redirect()->back()->with('error', 'Password salah!');
+            $session->setFlashdata('msg', 'Nama pengguna tidak ditemukan.');
+            return redirect()->to(base_url('login/admin'));
         }
-    } else {
-        return redirect()->back()->with('error', 'Email tidak ditemukan!');
     }
-}
+    
+    
+    
 }

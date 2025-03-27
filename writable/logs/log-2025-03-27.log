@@ -1,0 +1,86 @@
+CRITICAL - 2025-03-27 17:28:07 --> ErrorException: Undefined array key "user_password"
+[Method: POST, Route: AuthProses]
+in APPPATH\Controllers\Auth\AuthController.php on line 22.
+ 1 APPPATH\Controllers\Auth\AuthController.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_password"', 'C:\\laragon\\www\\apotek_app\\app\\Controllers\\Auth\\AuthController.php', 22)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\AuthController->MasukAdmin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+ERROR - 2025-03-27 22:01:54 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\laragon\www\apotek_app\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\laragon\www\apotek_app\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'apoteker_base', 3306, '', 0)
+#1 C:\laragon\www\apotek_app\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\apotek_app\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\apotek_app\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\apotek_app\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\apotek_app\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\laragon\www\apotek_app\app\Controllers\Auth\AuthController.php(20): CodeIgniter\BaseModel->first()
+#7 C:\laragon\www\apotek_app\system\CodeIgniter.php(933): App\Controllers\Auth\AuthController->MasukAdmin()
+#8 C:\laragon\www\apotek_app\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\AuthController))
+#9 C:\laragon\www\apotek_app\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\apotek_app\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\apotek_app\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\laragon\www\apotek_app\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\laragon\www\apotek_app\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\laragon\www\apotek_app\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\laragon\www\apotek_app\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\apotek_app\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\apotek_app\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\apotek_app\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\apotek_app\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 C:\laragon\www\apotek_app\app\Controllers\Auth\AuthController.php(20): CodeIgniter\BaseModel->first()
+#6 C:\laragon\www\apotek_app\system\CodeIgniter.php(933): App\Controllers\Auth\AuthController->MasukAdmin()
+#7 C:\laragon\www\apotek_app\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\AuthController))
+#8 C:\laragon\www\apotek_app\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\apotek_app\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\apotek_app\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\apotek_app\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\laragon\www\apotek_app\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2025-03-27 22:01:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: AuthProses]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pengguna`
+WHERE `nama` = :nama:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\Auth\AuthController.php(20): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\AuthController->MasukAdmin()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-27 22:02:16 --> ErrorException: Undefined array key "user_password"
+[Method: POST, Route: AuthProses]
+in APPPATH\Controllers\Auth\AuthController.php on line 22.
+ 1 APPPATH\Controllers\Auth\AuthController.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_password"', 'C:\\laragon\\www\\apotek_app\\app\\Controllers\\Auth\\AuthController.php', 22)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\AuthController->MasukAdmin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-27 22:03:47 --> ErrorException: Undefined array key "user_password"
+[Method: POST, Route: AuthProses]
+in APPPATH\Controllers\Auth\AuthController.php on line 22.
+ 1 APPPATH\Controllers\Auth\AuthController.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_password"', 'C:\\laragon\\www\\apotek_app\\app\\Controllers\\Auth\\AuthController.php', 22)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\AuthController->MasukAdmin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')

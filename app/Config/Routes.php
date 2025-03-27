@@ -14,7 +14,7 @@ $routes->get('login/kasir', 'Auth\Login::loginKasir'); // akses login kasir
 $routes->get('login/owner', 'Auth\Login::loginOwner'); // akses login owner
 
 // === route auth login akses === //
-$routes->post('prosses', 'Auth\AuthController::MasukAdmin');
+$routes->post('AuthProses', 'Auth\AuthController::MasukAdmin');
 
 
 // === route admin === //
