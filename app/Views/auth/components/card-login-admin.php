@@ -1,36 +1,52 @@
-<div class="container mt-10">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <div class="card my-5">
-          <form action="<?= base_url('prosses') ?>" class="card-body cardbody-color p-lg-5">
-          <?= csrf_field() ?>
-               <!-- === component breadcumb == -->
-          <nav aria-label="breadcrumb container">
-              <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="<?= base_url('/') ?>">Beranda</a></li>
-                  <li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('aksesLogin') ?>">Masuk</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Admin</li>
-              </ol>
-          </nav>
-            <div class="text-center">
-              <img src="https://i.pinimg.com/736x/13/44/88/1344881a0b7b7b4a766621adbaafa811.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                width="200px" alt="profile">
-            </div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card my-5">
+                <form action="<?= base_url('prosses') ?>" method="POST" class="card-body p-lg-5" novalidate>
+                    <?= csrf_field() ?>
 
-            <div class="mb-3">
-              <input type="text" class="form-control" name="nama" id="nama" aria-describedby="emailHelp"
-                placeholder="Nama Anda">
+                    <!-- === component breadcumb === -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="<?= esc(base_url('/')) ?>">Beranda</a></li>
+                            <li class="breadcrumb-item"><a href="<?= esc(base_url('aksesLogin')) ?>">Masuk</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Admin</li>
+                        </ol>
+                    </nav>
+
+                   <!-- === profile image === -->
+                    <div class="text-center">
+                        <img src="https://i.pinimg.com/736x/13/44/88/1344881a0b7b7b4a766621adbaafa811.jpg" 
+                            class="img-fluid img-thumbnail rounded-circle my-3"
+                            width="200px" alt="Foto Profil Admin">
+                    </div>
+
+                    <!-- === input role admin === -->
+                    <input type="hidden" name="akses" value="admin">
+
+                   <!-- === nama input === -->
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Anda" required>
+                    </div>
+
+                   <!-- === password input === -->
+                    <div class="mb-3">
+                        <input type="password" name="kata_sandi" class="form-control" id="kata_sandi" placeholder="Kata Sandi Anda" required>
+                    </div>
+
+                    <!-- === Submit Button === -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary w-100">Masuk</button>
+                    </div>
+
+                    <!-- === Lupa Password === -->
+                    <div class="text-center mt-3">
+                        <small class="text-muted">Lupa Kata Sandi? 
+                            <a href="#" class="fw-bold">Hubungi Admin</a>
+                        </small>
+                    </div>
+                </form>
             </div>
-            <div class="mb-3">
-              <input type="password" name="kata_sandi" class="form-control" id="kata_sandi" placeholder="Kata Sandi Anda">
-            </div>
-            <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Masuk</button></div>
-            <div id="emailHelp" class="form-text text-center mb-5 text-dark">Lupa
-              Kata Sandi? <a href="#" class="text-dark fw-bold"> Hubungi Admin</a>
-            </div>
-          </form>
         </div>
-
-      </div>
     </div>
-  </div>
+</div>
