@@ -9,11 +9,9 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Manajemen Data Obat</h1>
                     <p class="mb-4">Sistem ini menyediakan fitur untuk mengelola data obat secara efisien. Anda dapat menambahkan, mengedit, menghapus, dan mencari data obat. Untuk petunjuk lebih lanjut tentang penggunaan fitur ini, silakan lihat <a target="_blank" href="https://datatables.net">dokumentasi DataTables</a>.</p>
-
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">

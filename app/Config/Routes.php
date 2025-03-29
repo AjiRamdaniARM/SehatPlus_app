@@ -22,8 +22,12 @@ $routes->get('dashboard', 'Admin\Admin::index');
 $routes->get('data_obat', 'Admin\data_obat\DtoController::index');
 $routes->get('data_supplier', 'Admin\data_supplier\DspController::index');
 
-// === route sub/post/delete === //
+// === route subDomain === //
 $routes->get('tambah_obat', 'Admin\data_obat\DtoController::create');
+$routes->get('tambah_supplier', 'Admin\data_supplier\DspController::create');
+
+// === route post === //
+$routes->post('store_data_supplier','Admin\data_supplier\DspController::store');
 
 
 // === route password hash === //

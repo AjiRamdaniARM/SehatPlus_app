@@ -17,6 +17,7 @@
         <h1 class="headline"><?= lang('Errors.whoops') ?></h1>
 
         <p class="lead"><?= lang('Errors.weHitASnag') ?></p>
+        <p><?= esc($message) ?></p>
 
     </div>
 

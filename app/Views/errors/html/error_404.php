@@ -73,7 +73,7 @@
         <h1>404</h1>
 
         <p>
-            <?php if (ENVIRONMENT !== 'production') : ?>
+            <?php if (ENVIRONMENT !== 'development') : ?>
                 <?= nl2br(esc($message)) ?>
             <?php else : ?>
                 <?= lang('Errors.sorryCannotFind') ?>
