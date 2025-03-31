@@ -46,6 +46,18 @@ class AuthController extends BaseController
             return redirect()->to(base_url('login/admin'));
         }
     }
+
+    public function logout()
+    {
+        // Hapus session login
+        session()->remove('logged_in');
+        session()->remove('akses');
+        session()->remove('nama');
+        
+        // Redirect ke halaman login atau halaman lain
+        session()->setFlashdata('msgSuccess', 'Anda berhasil logout!');
+        return redirect()->to('/');
+    }
     
     
     

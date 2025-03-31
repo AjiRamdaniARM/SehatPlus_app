@@ -15,7 +15,7 @@ $routes->get('login/owner', 'Auth\Login::loginOwner'); // akses login owner
 
 // === route auth login akses === //
 $routes->post('AuthProses', 'Auth\AuthController::MasukAdmin');
-
+$routes->get('logout', 'Auth\AuthController::logout');
 
 // === route admin === //
 $routes->get('dashboard', 'Admin\Admin::index');

@@ -65,20 +65,20 @@
                                     <tbody>
                                         <?php if (!empty($penyedia)) : ?>
                                             <?php $no = 1; ?>
-                                            <?php foreach ($penyedia as $supplier) : ?>
+                                            <?php foreach ($penyedia as $index => $penyediaItem): ?>
                                                 <tr>
-                                                    <td><?= $no++ ?></td>
-                                                    <td><?= esc($supplier['nama_penyedia']) ?></td>
-                                                    <td><?= esc($supplier['no_telp']) ?></td>
-                                                    <td><?= esc($supplier['alamat']) ?></td>
-                                                    <td><?= esc($supplier['catatan']) ?></td>
-                                                    <td><?= tanggal_indo($supplier['dibuat_di']) ?></td>
+                                                    <td><?= $startNumber + $index ?></td>
+                                                    <td><?= esc($penyediaItem['nama_penyedia']) ?></td>
+                                                    <td><?= esc($penyediaItem['no_telp']) ?></td>
+                                                    <td><?= esc($penyediaItem['alamat']) ?></td>
+                                                    <td><?= esc($penyediaItem['catatan']) ?></td>
+                                                    <td><?= tanggal_indo($penyediaItem['dibuat_di']) ?></td>
                                                     <td>
                                                         <!-- Tombol Edit -->
-                                                        <a class="btn btn-warning btn-sm" href="<?= base_url('edit_supplier/'. $supplier['nama_penyedia']) ?>">
+                                                        <a class="btn btn-warning btn-sm" href="<?= base_url('edit_supplier/'. $penyediaItem['nama_penyedia']) ?>">
                                                             Edit
                                                         </a>
-                                                        <form action="<?= base_url('hapus_penyedia/' . $supplier['id_penyedia']) ?>" method="post" style="display:inline;">
+                                                        <form action="<?= base_url('hapus_penyedia/' . $penyediaItem['id_penyedia']) ?>" method="post" style="display:inline;">
                                                             <?= csrf_field() ?>
                                                             <input type="hidden" name="_method" value="DELETE">
                                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus data?')">Delete</button>

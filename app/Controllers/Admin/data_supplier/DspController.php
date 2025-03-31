@@ -14,9 +14,12 @@ class DspController extends BaseController
 
         $keyword = $this->request->getGet('keyword');
         $perPage = 5; // Jumlah data per halaman
+        $currentPage = $this->request->getVar('page') ?? 1;
+        $startNumber = ($currentPage - 1 ) * $perPage + 1;
         $data = [
             'penyedia' => $supplierModel->getPaginatedData($perPage, $keyword),
             'pager' => $supplierModel->pager, // Untuk pagination
+            'startNumber' => $startNumber,
             'keyword' => $keyword // Mengembalikan nilai pencarian
         ];
        
