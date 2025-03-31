@@ -31,8 +31,23 @@
                             <h6 class="m-0 font-weight-bold text-primary">Data Tabel supplier</h6>
                         </div>
                         <div class="card-body">
-                            <div class="mb-3">
+                            <div class="mb-3 d-flex" style="gap: 10px;">
                                 <a href="<?= base_url('tambah_supplier') ?>" class="btn btn-primary">Tambah Data</a>
+                                <div class="">
+                                    <form method="GET" class="flex items-center gap-2">
+                                        <input 
+                                            type="search" 
+                                            name="keyword" 
+                                            value="<?= esc($_GET['keyword'] ?? '') ?>" 
+                                            placeholder="Cari..." 
+                                            class="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        >
+                                        <button type="submit" style="border: none;" class="px-4 py-1 bg-primary text-white rounded-lg hover:bg-blue-600">
+                                            Cari
+                                        </button>
+                                    </form>
+                                </div>
+
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -78,6 +93,11 @@
                                         <?php endif; ?>
                                     </tbody>
                                 </table>
+                                <!-- === component pagination === -->
+                                <div class="mt-4">
+                                    <?= $pager->links('default', 'bootstrap_pagination') ?>
+                                </div>
+
                             </div>
                         </div>
 

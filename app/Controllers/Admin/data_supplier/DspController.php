@@ -11,7 +11,15 @@ class DspController extends BaseController
     {
         helper('format');
         $supplierModel = new PenyediaModel();
-        $data['penyedia'] = $supplierModel->findAll();
+
+        $keyword = $this->request->getGet('keyword');
+        $perPage = 5; // Jumlah data per halaman
+        $data = [
+            'penyedia' => $supplierModel->getPaginatedData($perPage, $keyword),
+            'pager' => $supplierModel->pager, // Untuk pagination
+            'keyword' => $keyword // Mengembalikan nilai pencarian
+        ];
+       
         return view('admin/pages/DataSupplier',$data); // Sesuaikan dengan lokasi view
     }
 

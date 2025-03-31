@@ -10,4 +10,20 @@ class PenyediaModel extends Model
 
     protected $primaryKey = 'id_penyedia ';
     protected $allowedFields = ['nama_penyedia', 'no_telp','alamat','catatan','dibuat_di', 'diperbarui_di'];
+
+    public function getPaginatedData($perPage, $keyword = null)
+    {
+        $query = $this;
+
+        if ($keyword) {
+            $query = $query->like('nama_penyedia', $keyword)
+                           ->orLike('no_telp', $keyword)
+                           ->orLike('alamat', $keyword);
+        }
+
+        return $query->paginate($perPage);
+    }
 }
+
+
+
