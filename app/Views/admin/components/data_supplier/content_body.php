@@ -1,12 +1,8 @@
 <div id="wrapper">
-
-    
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <?php if (session()->has('msgSuccess')) : ?>
@@ -63,8 +59,15 @@
                                                     <td><?= esc($supplier['catatan']) ?></td>
                                                     <td><?= tanggal_indo($supplier['dibuat_di']) ?></td>
                                                     <td>
-                                                        <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                                                        <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus data?')">Delete</a>
+                                                        <!-- Tombol Edit -->
+                                                        <a class="btn btn-warning btn-sm" href="<?= base_url('edit_supplier/'. $supplier['nama_penyedia']) ?>">
+                                                            Edit
+                                                        </a>
+                                                        <form action="<?= base_url('hapus_penyedia/' . $supplier['id_penyedia']) ?>" method="post" style="display:inline;">
+                                                            <?= csrf_field() ?>
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus data?')">Delete</button>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>

@@ -4,7 +4,13 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center">
             <h1 class="display-4 fw-bold">Selamat Datang di Kemenkes App</h1>
             <p class="lead">Jelajahi layanan kami yang luar biasa dan temukan solusi terbaik untuk Anda.</p>
-            <a href="<?= base_url('aksesLogin')?>" class="btn btn-primary btn-lg mt-3">Masuk Pada Aplikasi</a>
+            <?php $session = session(); ?>
+            <?php if($session->get('akses')): ?>
+                <a href="<?= base_url('dashboard')?>" class="btn btn-primary btn-lg mt-3"><?= $_SESSION['akses']; ?></a>
+            <?php else: ?>
+                <a href="<?= base_url('aksesLogin')?>" class="btn btn-primary btn-lg mt-3">Masuk Pada Aplikasi</a>
+            <?php endif; ?>
+           
         </div>
 
         <!-- === component image === -->

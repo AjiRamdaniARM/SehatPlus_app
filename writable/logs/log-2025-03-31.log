@@ -1,0 +1,98 @@
+CRITICAL - 2025-03-31 13:42:26 --> BadMethodCallException: Call to undefined method App\Models\PenyediaModel::get_where
+[Method: GET, Route: edit_supplier/Aji%20Ramdani]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Admin\data_supplier\DspController.php(51): CodeIgniter\Model->__call('get_where', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_supplier\DspController->edit('Aji Ramdani')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_supplier\DspController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-31 14:14:28 --> Error: Call to a member function update() on array
+[Method: POST, Route: edit_data_supplier/Aji%20Ramdani]
+in APPPATH\Controllers\Admin\data_supplier\DspController.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_supplier\DspController->storeEdit('Aji Ramdani')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_supplier\DspController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-31 14:14:35 --> Error: Call to a member function update() on array
+[Method: POST, Route: edit_data_supplier/Aji%20Ramdani]
+in APPPATH\Controllers\Admin\data_supplier\DspController.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_supplier\DspController->storeEdit('Aji Ramdani')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_supplier\DspController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-31 14:14:39 --> Error: Call to a member function update() on array
+[Method: POST, Route: edit_data_supplier/Aji%20Ramdani]
+in APPPATH\Controllers\Admin\data_supplier\DspController.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_supplier\DspController->storeEdit('Aji Ramdani')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_supplier\DspController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-31 14:18:08 --> ErrorException: Attempt to read property "id" on array
+[Method: POST, Route: edit_data_supplier/Aji%20Ramdani]
+in APPPATH\Controllers\Admin\data_supplier\DspController.php on line 80.
+ 1 APPPATH\Controllers\Admin\data_supplier\DspController.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\laragon\\www\\apotek_app\\app\\Controllers\\Admin\\data_supplier\\DspController.php', 80)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_supplier\DspController->storeEdit('Aji Ramdani')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_supplier\DspController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-31 14:18:27 --> ErrorException: Attempt to read property "nama_penyedia" on array
+[Method: POST, Route: edit_data_supplier/Aji%20Ramdani]
+in APPPATH\Controllers\Admin\data_supplier\DspController.php on line 80.
+ 1 APPPATH\Controllers\Admin\data_supplier\DspController.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_penyedia" on array', 'C:\\laragon\\www\\apotek_app\\app\\Controllers\\Admin\\data_supplier\\DspController.php', 80)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_supplier\DspController->storeEdit('Aji Ramdani')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_supplier\DspController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-31 14:18:52 --> ErrorException: Attempt to read property "id_penyedia" on array
+[Method: POST, Route: edit_data_supplier/Aji%20Ramdani]
+in APPPATH\Controllers\Admin\data_supplier\DspController.php on line 80.
+ 1 APPPATH\Controllers\Admin\data_supplier\DspController.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_penyedia" on array', 'C:\\laragon\\www\\apotek_app\\app\\Controllers\\Admin\\data_supplier\\DspController.php', 80)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_supplier\DspController->storeEdit('Aji Ramdani')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_supplier\DspController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-31 14:19:36 --> ErrorException: Attempt to read property "id_penyedia" on array
+[Method: POST, Route: edit_data_supplier/Aji%20Ramdani]
+in APPPATH\Controllers\Admin\data_supplier\DspController.php on line 80.
+ 1 APPPATH\Controllers\Admin\data_supplier\DspController.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_penyedia" on array', 'C:\\laragon\\www\\apotek_app\\app\\Controllers\\Admin\\data_supplier\\DspController.php', 80)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_supplier\DspController->storeEdit('Aji Ramdani')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_supplier\DspController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-03-31 14:22:39 --> CodeIgniter\Validation\Exceptions\ValidationException: "max:12" is not a valid rule.
+[Method: POST, Route: edit_data_supplier/Aji%20Ramdanis]
+in SYSTEMPATH\Validation\Validation.php on line 347.
+ 1 SYSTEMPATH\Validation\Validation.php(347): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('max:12')
+ 2 SYSTEMPATH\Validation\Validation.php(203): CodeIgniter\Validation\Validation->processRules('no_telp', 'no_telp', '08950874270033', [...], [...], 'no_telp')
+ 3 APPPATH\Controllers\Admin\data_supplier\DspController.php(63): CodeIgniter\Validation\Validation->run()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_supplier\DspController->storeEdit('Aji Ramdanis')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_supplier\DspController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')

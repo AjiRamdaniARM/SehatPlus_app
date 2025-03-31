@@ -11,7 +11,7 @@
         </li>
         <li class="nav-item">
           <?php $session = session(); ?>
-          <?php if($session->get('nama')): ?>
+          <?php if($session->get('akses')): ?>
             <a class="nav-link" href="<?= base_url('dashboard') ?>"> <?= $_SESSION['akses']; ?></a>
           <?php else: ?>
             <a class="nav-link" href="<?= base_url('aksesLogin'); ?>">Masuk</a>
