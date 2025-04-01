@@ -57,6 +57,7 @@
                                             <th>Nama Supplier</th>
                                             <th>Telepone</th>
                                             <th>Alamat</th>
+                                            <th>Suplai Obat</th>
                                             <th>Catatan</th>
                                             <th>Tanggal Masuk </th>
                                             <th>Aksi</th> 
@@ -71,6 +72,7 @@
                                                     <td><?= esc($penyediaItem['nama_penyedia']) ?></td>
                                                     <td><?= esc($penyediaItem['no_telp']) ?></td>
                                                     <td><?= esc($penyediaItem['alamat']) ?></td>
+                                                    <td>12 Obat</td>
                                                     <td><?= esc($penyediaItem['catatan']) ?></td>
                                                     <td><?= tanggal_indo($penyediaItem['dibuat_di']) ?></td>
                                                     <td>
