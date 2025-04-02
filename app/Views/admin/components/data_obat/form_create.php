@@ -38,9 +38,14 @@
                             <input type="text" class="form-control" id="nama_obat" name="nama_obat" required>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="kategori_obat" class="form-label">Kategori Obat</label>
-                            <input type="text" class="form-control" id="kategori_obat" name="kategori_obat" required>
+                        <div class="supplier-container">
+                            <label for="kategori_obat">Pilih kategori obat</label>
+                            <select id="kategori_obat" name="kategori_obat" required>
+                                <option value="">Pilih Tipe Obat</option>
+                                <?php foreach($kategoriObat as $ko ) : ?>
+                                <option value="<?= $ko['id_kategori_obat'] ?>"><?= $ko['nama_tipe'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
 
                         <div class="row">
@@ -62,12 +67,12 @@
                             <div class="col-md-6 mb-3">
                             <label for="stok" class="form-label">Stok</label>
                             <input type="number" class="form-control" id="stok" name="stok" required>
-                            </div>asasasassnaknaksnas
+                            </div>
                         </div>
 
                         <div class="supplier-container">
-                            <label for="supplier">Pilih tipe obat</label>
-                            <select id="supplier" name="tipe_obat" required>
+                            <label for="tipe_obat">Pilih tipe obat</label>
+                            <select id="tipe_obat" name="tipe_obat" required>
                                 <option value="">Pilih Tipe Obat</option>
                                 <option value="tablet">Tablet</option>
                                 <option value="kapsul">Kapsul</option>
@@ -82,9 +87,9 @@
                             <label for="supplier">Pilih Supplier</label>
                             <select id="supplier" name="supplier" required>
                                 <option value="">Pilih Supplier</option>
-                                <option value="1">PT. Sehat Selalu</option>
-                                <option value="2">CV. Obat Makmur</option>
-                                <option value="3">PT. Farma Medika</option>
+                                <?php foreach ($penyedia as $p) : ?>
+                                    <option value="<?= $p['id_penyedia']; ?>"><?= $p['nama_penyedia']; ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
 

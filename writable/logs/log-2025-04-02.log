@@ -1,0 +1,60 @@
+CRITICAL - 2025-04-02 14:50:27 --> ErrorException: Undefined variable $penyedia
+[Method: GET, Route: tambah_obat]
+in APPPATH\Views\admin\components\data_obat\form_create.php on line 85.
+ 1 APPPATH\Views\admin\components\data_obat\form_create.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $penyedia', 'C:\\laragon\\www\\apotek_app\\app\\Views\\admin\\components\\data_obat\\form_create.php', 85)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\admin\\components\\data_obat\\form_create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/components/data_obat/form_create', [], true)
+ 5 APPPATH\Controllers\Admin\data_obat\DtoController.php(17): view('admin/components/data_obat/form_create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_obat\DtoController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_obat\DtoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-04-02 14:50:52 --> ErrorException: Undefined variable $penyedia
+[Method: GET, Route: tambah_obat]
+in APPPATH\Views\admin\components\data_obat\form_create.php on line 85.
+ 1 APPPATH\Views\admin\components\data_obat\form_create.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $penyedia', 'C:\\laragon\\www\\apotek_app\\app\\Views\\admin\\components\\data_obat\\form_create.php', 85)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\admin\\components\\data_obat\\form_create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/components/data_obat/form_create', [], true)
+ 5 APPPATH\Controllers\Admin\data_obat\DtoController.php(17): view('admin/components/data_obat/form_create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_obat\DtoController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_obat\DtoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-04-02 14:51:11 --> ErrorException: Undefined variable $penyedia
+[Method: GET, Route: tambah_obat]
+in APPPATH\Views\admin\components\data_obat\form_create.php on line 85.
+ 1 APPPATH\Views\admin\components\data_obat\form_create.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $penyedia', 'C:\\laragon\\www\\apotek_app\\app\\Views\\admin\\components\\data_obat\\form_create.php', 85)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\admin\\components\\data_obat\\form_create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/components/data_obat/form_create', [], true)
+ 5 APPPATH\Controllers\Admin\data_obat\DtoController.php(17): view('admin/components/data_obat/form_create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_obat\DtoController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_obat\DtoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-04-02 14:51:36 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: tambah_obat]
+in APPPATH\Views\admin\components\data_obat\form_create.php on line 86.
+ 1 APPPATH\Views\admin\components\data_obat\form_create.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\apotek_app\\app\\Views\\admin\\components\\data_obat\\form_create.php', 86)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\admin\\components\\data_obat\\form_create.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/components/data_obat/form_create', [], true)
+ 5 APPPATH\Controllers\Admin\data_obat\DtoController.php(17): view('admin/components/data_obat/form_create', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_obat\DtoController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_obat\DtoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')

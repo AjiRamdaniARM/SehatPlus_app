@@ -70,6 +70,8 @@ class DspController extends BaseController
             'no_telp'      => 'required|numeric|min_length[12]|max_length[13]',
             'alamat'        => 'required',
         ]);
+        
+        
     
         if (!$validation->withRequest($this->request)->run()) {
             return redirect()->back()->with('errors', $validation->getErrors());
