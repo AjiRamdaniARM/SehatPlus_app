@@ -22,42 +22,75 @@ class DtoController extends BaseController
         return view('admin/components/data_obat/form_create', ['penyedia' => $getPenyediaModel, 'kategoriObat' => $getKategoriModel]); 
     }
 
-    public function storeObat() {
+    public function storeObat()
+    {
         $validation = \Config\Services::validation();
+    
         $validation->setRules([
             'nama_obat' => 'required|min_length[3]',
             'kategori_obat' => 'required',
             'harga_beli' => 'required|numeric',
             'harga_jual' => 'required|numeric',
-            'tanggal_kedaluwarsa' => 'required|date',
-            'stok' => 'required|numeric|min_length[1]',
+            'tanggal_kedaluwarsa' => 'required|valid_date',
+            'stok' => 'required|numeric',
             'tipe_obat' => 'required',
             'supplier' => 'required',
         ]);
-
-        $id_pengguna = session()->get('id_pengguna'); // Mengambil ID pengguna dari session
-
-
-        if(!$validation->withRequest($this->request)->run()) {
+    
+        if (!$validation->withRequest($this->request)->run()) {
             return redirect()->back()->withInput()->with('errors', $validation->getErrors());
         }
-
+    
+        $session = session();
+        $id_pengguna = $session->get('id_pengguna');
+    
         $DataObatModel = new ObatModel();
         $BarangMasukModel = new BarangMasukModel();
-        $DataObatModel -> insert([
-            'nama' => $this->request->getPost('nama_obat'),
-            'id_kategori_obat' => $this->request->getPost('kategori_obat'),
-            'harga_pembelian' => $this->request->getPost('harga_beli'),
-            'harga_penjualan' => $this->request->getPost('harga_jual'),
+    
+        // Ambil id_produk_obat terakhir
+        $last = $DataObatModel->orderBy('id_produk_obat', 'DESC')->first();
+    
+        if ($last) {
+            // Ambil angka dari format contoh: obatn001 -> 001
+            $lastNumber = (int)substr($last['id_produk_obat'], 5);
+            $newNumber = $lastNumber + 1;
+        } else {
+            $newNumber = 1;
+        }
+    
+        // Format ID baru: obatn001, obatn002, ...
+        $kode_obat = 'obatn' . str_pad($newNumber, 3, '0', STR_PAD_LEFT);
+    
+        // Insert ke tabel obat
+        $DataObatModel->insert([
+            'kode_obat'     => $kode_obat,
+            'nama'               => $this->request->getPost('nama_obat'),
+            'id_kategori_obat'   => $this->request->getPost('kategori_obat'),
+            'harga_pembelian'    => $this->request->getPost('harga_beli'),
+            'harga_penjualan'    => $this->request->getPost('harga_jual'),
             'tanggak_kadaluarsa' => $this->request->getPost('tanggal_kedaluwarsa'),
-            'stok' => $this->request->getPost('stok'),
-            'tipe_obat' => $this->request->getPost('tipe_obat'),
-            'status' => 'proses',
+            'stok'               => $this->request->getPost('stok'),
+            'tipe_obat'          => $this->request->getPost('tipe_obat'),
+            'status'             => 'proses',
         ]);
+    
+        // Insert ke tabel barang masuk
         $BarangMasukModel->insert([
-            'id_penyedia' => $this->request->getPost('supplier'),
-            'id_pengguna' => $id_pengguna,
-            'id_produk_obat' => $id_pengguna,
+            'id_penyedia'     => $this->request->getPost('supplier'),
+            'id_pengguna'     => $id_pengguna,
+            'kode_obat'  => $kode_obat,
         ]);
+    
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Data obat berhasil disimpan.',
+            'data' => [
+                'id_produk_obat' => $kode_obat,
+                'nama' => $this->request->getPost('nama_obat'),
+                'id_pengguna' => $id_pengguna,
+                // Tambahkan data lain jika perlu
+            ]
+        ]);
+        ;
     }
 }

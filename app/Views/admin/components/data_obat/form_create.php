@@ -32,7 +32,8 @@
                     <div class="card shadow rounded-4">
                     <div class="card-body">
                         <h4 class="mb-4">Form Input Obat</h4>
-                        <form action="#" method="POST">
+                        <form action="<?= base_url('store_data_obat') ?>" method="POST">
+                        <?= csrf_field() ?>
                         <div class="mb-3">
                             <label for="nama_obat" class="form-label">Nama Obat</label>
                             <input type="text" class="form-control" id="nama_obat" name="nama_obat" required>

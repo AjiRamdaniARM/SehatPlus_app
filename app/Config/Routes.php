@@ -29,6 +29,7 @@ $routes->get('edit_supplier/(:segment)', 'Admin\data_supplier\DspController::edi
 
 // === route post === //
 $routes->post('store_data_supplier','Admin\data_supplier\DspController::store');
+$routes->post('store_data_obat','Admin\data_obat\DtoController::storeObat');
 
 // === route edit === //
 $routes->post('edit_data_supplier/(:segment)','Admin\data_supplier\DspController::storeEdit/$1');
