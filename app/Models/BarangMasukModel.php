@@ -9,7 +9,7 @@ class BarangMasukModel extends Model
     protected $table = 'barang_masuk';
 
     protected $primaryKey = 'id_barang_masuk ';
-    protected $allowedFields = ['id_penyedia', 'id_pengguna ', 'kode_obat','dibuat_di','diperbarui_di'];
+    protected $allowedFields = ['id_penyedia', 'id_pengguna', 'kode_obat','dibuat_di','diperbarui_di'];
 
     
 }
