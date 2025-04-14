@@ -51,11 +51,11 @@
 
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                            <label for="harga_beli" class="form-label">Harga Pembelian</label>
+                            <label for="harga_beli" class="form-label">Harga Pembelian Jumlah Stock</label>
                             <input type="number" class="form-control" id="harga_beli" name="harga_beli" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                            <label for="harga_jual" class="form-label">Harga Jual</label>
+                            <label for="harga_jual" class="form-label">Harga Jual Satuan</label>
                             <input type="number" class="form-control" id="harga_jual" name="harga_jual" required>
                             </div>
                         </div>
