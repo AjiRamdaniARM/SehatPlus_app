@@ -17,10 +17,21 @@ class DtoController extends BaseController
     // ==== Controller index ====
     public function index()
     {
+        helper('format');
         // ==== Model ====
         $DataObatModel = new ObatModel();
+        $keyword = $this->request->getGet('keywordObat');
+        $perPage = 5; // Jumlah data per halaman
+        $currentPage = $this->request->getVar('page') ?? 1;
+        $startNumber = ($currentPage - 1 ) * $perPage + 1;
+        $data = [
+            'obat' => $DataObatModel->getPaginatedDataObat($perPage, $keyword),
+            'pager' => $DataObatModel->pager, // Untuk pagination
+            'startNumber' => $startNumber,
+            'keyword' => $keyword // Mengembalikan nilai pencarian
+        ];
         $getObatModel = $DataObatModel->getObatWithKategori();
-        return view('admin/pages/DataObat', ['dataObat' => $getObatModel]);
+        return view('admin/pages/DataObat', $data);
     }
 
     // ==== Controller create ====
@@ -159,76 +170,136 @@ class DtoController extends BaseController
     // === Controller edit ===
     public function edit($kode_obat)
     {
-        try {
-            $obatModel = new ObatModel();
-            $penyediaModel = new PenyediaModel();
-            $kategoriObatModel = new KategoriObatModel();
+        helper('form');
+        
+        $obatModel = new ObatModel();
+        $kategoriObatModel = new KategoriObatModel();
 
-            $data = [
-                'obat' => $obatModel->where('kode_obat', $kode_obat)->first(),
-                'penyedia' => $penyediaModel->findAll(),
-                'kategoriObat' => $kategoriObatModel->findAll()
-            ];
-
-            if (!$data['obat']) {
-                throw new \Exception('Data obat tidak ditemukan');
-            }
-
-            return view('admin/components/data_obat/form_edit', $data);
-        } catch (\Exception $e) {
-            return redirect()->route('data_obat')->with('error', $e->getMessage());
+        // Ambil data obat
+        $obat = $obatModel->where('kode_obat', $kode_obat)->first();
+        
+        if (!$obat) {
+            return redirect()->to(base_url('data_obat'))->with('error', 'Data obat tidak ditemukan.');
         }
+
+        $data = [
+            'obat' => $obat,
+            'kategoriObat' => $kategoriObatModel->findAll()
+        ];
+
+        return view('admin/components/data_obat/form_edit', $data);
     }
 
     // === Controller update ===
     public function update($kode_obat)
     {
-        try {
-            if (!$this->validateObatData()) {
-                return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-            }
+        // Validasi input
+        $validation = \Config\Services::validation();
+        
+        $validation->setRules([
+            'nama_obat' => [
+                'rules' => 'required|min_length[3]',
+                'errors' => [
+                    'required' => 'Nama obat harus diisi',
+                    'min_length' => 'Nama obat minimal 3 karakter'
+                ]
+            ],
+            'kategori_obat' => [
+                'rules' => 'required',
+                'errors' => ['required' => 'Kategori obat harus dipilih']
+            ],
+            'harga_beli' => [
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => 'Harga beli harus diisi',
+                    'numeric' => 'Harga beli harus berupa angka'
+                ]
+            ],
+            'harga_jual' => [
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => 'Harga jual harus diisi',
+                    'numeric' => 'Harga jual harus berupa angka'
+                ]
+            ],
+            'tanggal_kedaluwarsa' => [
+                'rules' => 'required|valid_date',
+                'errors' => [
+                    'required' => 'Tanggal kedaluwarsa harus diisi',
+                    'valid_date' => 'Format tanggal tidak valid'
+                ]
+            ],
+            'stok' => [
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => 'Stok harus diisi',
+                    'numeric' => 'Stok harus berupa angka'
+                ]
+            ],
+            'tipe_obat' => [
+                'rules' => 'required',
+                'errors' => ['required' => 'Tipe obat harus dipilih']
+            ],
+            'status' => [
+                'rules' => 'required|in_list[proses,terima,tolak]',
+                'errors' => [
+                    'required' => 'Status harus dipilih',
+                    'in_list' => 'Status tidak valid'
+                ]
+            ]
+        ]);
 
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->back()
+                           ->withInput()
+                           ->with('errors', $validation->getErrors());
+        }
+
+        try {
             $obatModel = new ObatModel();
             
+            // Update data obat
             $data = [
                 'nama' => $this->request->getPost('nama_obat'),
                 'id_kategori_obat' => $this->request->getPost('kategori_obat'),
                 'harga_pembelian' => $this->request->getPost('harga_beli'),
                 'harga_penjualan' => $this->request->getPost('harga_jual'),
-                'tanggal_kadaluarsa' => $this->request->getPost('tanggal_kedaluwarsa'),
+                'tanggak_kadaluarsa' => $this->request->getPost('tanggal_kedaluwarsa'),
                 'stok' => $this->request->getPost('stok'),
                 'tipe_obat' => $this->request->getPost('tipe_obat'),
+                'status' => $this->request->getPost('status'),
+                'diperbarui_di' => date('Y-m-d H:i:s')
             ];
 
-            $obatModel->where('kode_obat', $kode_obat)->set($data)->update();
+            $updated = $obatModel->update($kode_obat, $data);
 
-            return redirect()->route('data_obat')->with('success', 'Data obat berhasil diperbarui');
+            if ($updated) {
+                return redirect()->to(base_url('data_obat'))->with('success', 'Data obat berhasil diperbarui.');
+            }
+
+            return redirect()->back()
+                           ->withInput()
+                           ->with('error', 'Gagal memperbarui data obat.');
+
         } catch (\Exception $e) {
             log_message('error', '[DtoController::update] Error: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Terjadi kesalahan saat memperbarui data obat');
+            return redirect()->back()
+                           ->withInput()
+                           ->with('error', 'Terjadi kesalahan saat memperbarui data obat.');
         }
     }
 
     // === Controller delete ===
     public function delete($kode_obat)
     {
-        try {
-            $obatModel = new ObatModel();
-            
-            $obat = $obatModel->where('kode_obat', $kode_obat)->first();
-            if (!$obat) {
-                throw new \Exception('Data obat tidak ditemukan');
-            }
-
-            // Soft delete dengan mengubah status
-            $obatModel->where('kode_obat', $kode_obat)
-                     ->set(['status' => 'nonaktif'])
-                     ->update();
-
-            return redirect()->route('data_obat')->with('success', 'Data obat berhasil dihapus');
-        } catch (\Exception $e) {
-            log_message('error', '[DtoController::delete] Error: ' . $e->getMessage());
-            return redirect()->route('data_obat')->with('error', 'Terjadi kesalahan saat menghapus data obat');
+        $obatModel = new ObatModel();
+        
+        // Cek apakah data ada
+        if ($obatModel->find($kode_obat)) {
+            $obatModel->delete($kode_obat);
+            return redirect()->back()->with('success', 'Data Obat berhasil dihapus!');
         }
+
+        return redirect()->back()->with('msgError', 'Data tidak ditemukan!');
     }
 }

@@ -1,0 +1,41 @@
+CRITICAL - 2025-04-16 15:36:25 --> Error: Call to a member function delete() on array
+[Method: POST, Route: delete_data_obat/obatn006]
+in APPPATH\Controllers\Admin\data_obat\DtoController.php on line 223.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_obat\DtoController->delete('obatn006')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_obat\DtoController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-04-16 15:47:33 --> CodeIgniter\Pager\Exceptions\PagerException: "bootstrap4" is not a valid Pager template.
+[Method: GET, Route: data_obat]
+in SYSTEMPATH\Pager\Pager.php on line 124.
+ 1 SYSTEMPATH\Pager\Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('bootstrap4')
+ 2 SYSTEMPATH\Pager\Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('default', 'bootstrap4')
+ 3 APPPATH\Views\admin\components\data_obat\content_body.php(138): CodeIgniter\Pager\Pager->links('default', 'bootstrap4')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\admin\\components\\data_obat\\content_body.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/components/data_obat/content_body', [], true)
+ 7 APPPATH\Views\admin\pages\DataObat.php(30): view('admin/components/data_obat/content_body')
+ 8 SYSTEMPATH\View\View.php(234): include('C:\\laragon\\www\\apotek_app\\app\\Views\\admin\\pages\\DataObat.php')
+ 9 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/pages/DataObat', [], true)
+11 APPPATH\Controllers\Admin\data_obat\DtoController.php(34): view('admin/pages/DataObat', [...])
+12 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_obat\DtoController->index()
+13 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_obat\DtoController))
+14 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+18 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')
+CRITICAL - 2025-04-16 15:54:52 --> Error: Call to a member function getErrors() on null
+[Method: POST, Route: update_data_obat/obatn003]
+in APPPATH\Controllers\Admin\data_obat\DtoController.php on line 200.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\data_obat\DtoController->update('obatn003')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\data_obat\DtoController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\apotek_app\\public\\index.php')

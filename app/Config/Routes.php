@@ -32,12 +32,16 @@ $routes->post('store_data_supplier','Admin\data_supplier\DspController::store');
 $routes->post('store_data_obat','Admin\data_obat\DtoController::storeObat');
 
 // === route edit === //
+$routes->get('edit_supplier/(:segment)', 'Admin\data_supplier\DspController::edit/$1');
+$routes->get('edit_obat/(:segment)', 'Admin\data_obat\DtoController::edit/$1');
+
+// === route update === //
 $routes->post('edit_data_supplier/(:segment)','Admin\data_supplier\DspController::storeEdit/$1');
+$routes->post('update_data_obat/(:segment)', 'Admin\data_obat\DtoController::update/$1');
 
 // === route delete === //
 $routes->delete('hapus_penyedia/(:num)', 'Admin\Data_supplier\DspController::delete/$1');
-
-
+$routes->delete('delete_data_obat/(:segment)', 'Admin\data_obat\DtoController::delete/$1');
 
 // === route password hash === //
 $routes->get('passwordHash', 'Auth\Login::passwordHash');

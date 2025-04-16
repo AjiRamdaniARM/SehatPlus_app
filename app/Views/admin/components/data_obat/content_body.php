@@ -30,11 +30,26 @@
                             <h6 class="m-0 font-weight-bold text-primary">Data Tabel obat</h6>
                         </div>
                         <div class="card-body">
-                            <div class="mb-3">
-                                <!-- ==== Button Tambah Data ==== -->
-                                <?php if (in_array($_SESSION['akses'], ['admin', 'owner'])) : ?>
+                            <div class="mb-3 d-flex" style="gap: 10px;">
+                               <!-- ==== Button Tambah Data ==== -->
+                               <?php if (in_array($_SESSION['akses'], ['admin', 'owner'])) : ?>
                                     <a href="<?= base_url('tambah_obat') ?>" class="btn btn-primary">Tambah Data</a>
                                 <?php endif; ?>
+                                <div class="">
+                                    <form method="GET" class="flex items-center gap-2">
+                                        <input 
+                                            type="search" 
+                                            name="keywordObat" 
+                                            value="<?= esc($_GET['keywordObat'] ?? '') ?>" 
+                                            placeholder="Cari..." 
+                                            class="w-full px-2 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        >
+                                        <button type="submit" style="border: none;" class="px-4 py-1 bg-primary text-white rounded-lg hover:bg-blue-600">
+                                            Cari
+                                        </button>
+                                    </form>
+                                </div>
+
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -56,11 +71,11 @@
                                     <!-- ==== Body ==== -->
                                     <tbody>
                                         <!-- ==== Jika data obat tidak kosong ==== -->
-                                        <?php if (!empty($dataObat)) : ?>
+                                        <?php if (!empty($obat)) : ?>
                                             <!-- ==== Looping data obat ==== -->
-                                            <?php foreach ($dataObat as $index => $dataObats): ?>
+                                            <?php foreach ($obat as $index => $dataObats): ?>
                                                 <tr>
-                                                    <td><?= $index + 1 ?></td>
+                                                    <td><?= $startNumber++ ?></td>
                                                     <td><?= esc($dataObats['nama']) ?></td>
                                                     <td><?= esc($dataObats['nama_tipe']) ?></td>
                                                     <td><?= format_rupiah($dataObats['harga_pembelian']) ?></td>
@@ -68,10 +83,10 @@
                                                     <td><?= esc($dataObats['tanggak_kadaluarsa']) ?></td>
                                                     <td><?= esc($dataObats['stok']) ?></td>
                                                     <td>
-                                                        <?php if ($dataObats['status'] == 'aktif'): ?>
-                                                            <span class="badge badge-success">Aktif</span>
-                                                        <?php elseif ($dataObats['status'] == 'nonaktif'): ?>
-                                                            <span class="badge badge-danger">Nonaktif</span>
+                                                        <?php if ($dataObats['status'] == 'terima'): ?>
+                                                            <span class="badge badge-success">Terima</span>
+                                                        <?php elseif ($dataObats['status'] == 'tolak'): ?>
+                                                            <span class="badge badge-danger">Ditolak</span>
                                                         <?php else: ?>
                                                             <span class="badge badge-warning">Proses</span>
                                                         <?php endif; ?>
@@ -88,53 +103,40 @@
                                                                    title="Edit">
                                                                     <i class="fas fa-edit"></i>
                                                                 </a>
-                                                                <button type="button" 
-                                                                        class="btn btn-danger btn-sm" 
-                                                                        data-toggle="modal" 
-                                                                        data-target="#deleteModal<?= $dataObats['kode_obat'] ?>"
-                                                                        title="Hapus">
-                                                                    <i class="fas fa-trash"></i>
-                                                                </button>
+                                                                <form action="<?= base_url('delete_data_obat/' . $dataObats['kode_obat']) ?>" 
+                                                                      method="POST" 
+                                                                      class="d-inline" 
+                                                                      onsubmit="return confirm('Apakah Anda yakin ingin menghapus obat <?= esc($dataObats['nama']) ?>?');">
+                                                                    <?= csrf_field() ?>
+                                                                    <input type="hidden" name="_method" value="DELETE">
+                                                                    <button type="submit" 
+                                                                            class="btn btn-danger btn-sm"
+                                                                            title="Hapus">
+                                                                        <i class="fas fa-trash"></i>
+                                                                    </button>
+                                                                </form>
                                                             <?php endif; ?>
-                                                        </div>
-
-                                                        <!-- ==== Modal Hapus ==== -->
-                                                        <div class="modal fade" id="deleteModal<?= $dataObats['kode_obat'] ?>" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                                            <div class="modal-dialog" role="document">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus</h5>
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                            <span aria-hidden="true">&times;</span>
-                                                                        </button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        Apakah Anda yakin ingin menghapus obat "<?= esc($dataObats['nama']) ?>"?
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                                        <!-- ==== Form Hapus ==== -->
-                                                                        <form action="<?= base_url('delete_obat/' . $dataObats['kode_obat']) ?>" method="POST" class="d-inline">
-                                                                            <?= csrf_field() ?>
-                                                                            <input type="hidden" name="_method" value="DELETE">
-                                                                            <button type="submit" class="btn btn-danger">Hapus</button>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <!-- ==== End of Looping data obat ==== -->
                                             <?php endforeach; ?>
-                                            <!-- ==== End of Jika data obat tidak kosong ==== -->
                                         <?php else : ?>
                                             <tr>
-                                                <td colspan="6" class="text-center">Data supplier belum ada.</td>
+                                                <td colspan="11" class="text-center">
+                                                    <?php if (!empty($keyword)) : ?>
+                                                        Data obat dengan kata kunci "<?= esc($keyword) ?>" tidak ditemukan.
+                                                    <?php else : ?>
+                                                        Data obat belum ada.
+                                                    <?php endif; ?>
+                                                </td>
                                             </tr>
                                         <?php endif; ?>
                                     </tbody>
                                 </table>
+                                <!-- Pagination -->
+                                <div class="mt-3">
+                                    <?= $pager->links('default', 'bootstrap_pagination') ?>
+                                </div>
                             </div>
                         </div>
 

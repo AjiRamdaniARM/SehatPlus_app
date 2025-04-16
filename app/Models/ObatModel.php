@@ -53,4 +53,20 @@ class ObatModel extends Model
                     ->join('kategori_obat', 'kategori_obat.id_kategori_obat = obat.id_kategori_obat')
                     ->findAll();
     }
+
+    public function getPaginatedDataObat($perPage, $keyword = null)
+    {
+        $query = $this->select('obat.*, kategori_obat.nama_tipe')
+                     ->join('kategori_obat', 'kategori_obat.id_kategori_obat = obat.id_kategori_obat');
+
+        if ($keyword) {
+            $query = $query->groupStart()
+                          ->like('obat.nama', $keyword)
+                          ->orLike('obat.kode_obat', $keyword)
+                          ->orLike('kategori_obat.nama_tipe', $keyword)
+                          ->groupEnd();
+        }
+
+        return $query->paginate($perPage);
+    }
 }
