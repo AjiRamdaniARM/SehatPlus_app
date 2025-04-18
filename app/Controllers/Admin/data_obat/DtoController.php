@@ -9,6 +9,7 @@ use App\Models\PenyediaModel;
 
 class DtoController extends BaseController
 {
+    // ==== Helper ====
     public function __construct()
     {
         helper('currency');
@@ -62,7 +63,7 @@ class DtoController extends BaseController
             // ==== Generate kode obat ====
             $kode_obat = $this->generateKodeObat($DataObatModel);
 
-            // Insert ke tabel obat
+            // ==== Insert ke tabel obat ====
             $DataObatModel->insert([
                 'kode_obat'          => $kode_obat,
                 'nama'               => $this->request->getPost('nama_obat'),
@@ -99,6 +100,7 @@ class DtoController extends BaseController
     {
         $validation = \Config\Services::validation();
     
+        // ==== Validasi input ====
         $validation->setRules([
             'nama_obat' => [
                 'rules' => 'required|min_length[3]',
@@ -157,6 +159,7 @@ class DtoController extends BaseController
     {
         $last = $DataObatModel->orderBy('id_produk_obat', 'DESC')->first();
         
+        // ==== Jika data ada ====
         if ($last) {
             $lastNumber = (int)substr($last['kode_obat'], 5);
             $newNumber = $lastNumber + 1;
@@ -175,7 +178,7 @@ class DtoController extends BaseController
         $obatModel = new ObatModel();
         $kategoriObatModel = new KategoriObatModel();
 
-        // Ambil data obat
+        // ==== Ambil data obat ====
         $obat = $obatModel->where('kode_obat', $kode_obat)->first();
         
         if (!$obat) {
@@ -193,9 +196,10 @@ class DtoController extends BaseController
     // === Controller update ===
     public function update($kode_obat)
     {
-        // Validasi input
+        // ==== Validasi input ====
         $validation = \Config\Services::validation();
         
+        // ==== Validasi input ====
         $validation->setRules([
             'nama_obat' => [
                 'rules' => 'required|min_length[3]',
@@ -249,6 +253,7 @@ class DtoController extends BaseController
             ]
         ]);
 
+        // ==== Validasi input ====
         if (!$validation->withRequest($this->request)->run()) {
             return redirect()->back()
                            ->withInput()
@@ -258,7 +263,7 @@ class DtoController extends BaseController
         try {
             $obatModel = new ObatModel();
             
-            // Update data obat
+            //  ==== Update data obat ====  
             $data = [
                 'nama' => $this->request->getPost('nama_obat'),
                 'id_kategori_obat' => $this->request->getPost('kategori_obat'),
@@ -273,15 +278,19 @@ class DtoController extends BaseController
 
             $updated = $obatModel->update($kode_obat, $data);
 
+            // ==== Response ====
             if ($updated) {
                 return redirect()->to(base_url('data_obat'))->with('success', 'Data obat berhasil diperbarui.');
             }
 
+            // ==== Response gagal ====
             return redirect()->back()
                            ->withInput()
                            ->with('error', 'Gagal memperbarui data obat.');
 
+                           
         } catch (\Exception $e) {
+            // ==== Response error ====
             log_message('error', '[DtoController::update] Error: ' . $e->getMessage());
             return redirect()->back()
                            ->withInput()
@@ -294,7 +303,7 @@ class DtoController extends BaseController
     {
         $obatModel = new ObatModel();
         
-        // Cek apakah data ada
+        // ==== Cek apakah data ada ====
         if ($obatModel->find($kode_obat)) {
             $obatModel->delete($kode_obat);
             return redirect()->back()->with('success', 'Data Obat berhasil dihapus!');
